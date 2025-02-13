@@ -3,6 +3,8 @@
 let a = 10;
 let b = 3;
 
+//  Operadores Aritméticos
+
 console.log("Soma: ");
 console.log(a + b); // 13
 console.log("Subtração: ");
