@@ -9,10 +9,8 @@ console.log(botao.textContent);
 
 //Exercicio 2
 function mudarTexto() {
-  let titulo = document.getElementById("titulo");
-  let paragrafo = document.getElementsByClassName("paragrafo");
   titulo.textContent = "Texto alterado!";
-  paragrafo[0].textContent ="Texto alterado!";
+  paragrafo.textContent ="Texto alterado!";
 }
 
 //Exercicio 3
