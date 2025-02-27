@@ -25,6 +25,11 @@ console.log(palavras);
 palavras.shift();
 console.log(palavras);
 
+// Percorrer um array(loop) for
+for (let i = 0; i < numeros.length; i++) {
+  console.log("Número [" + i + "] = " + numeros[i]);
+}
+
 // Foreach - Repetição em um vetor
 palavras.forEach(palavra => {
   console.log(palavra);
