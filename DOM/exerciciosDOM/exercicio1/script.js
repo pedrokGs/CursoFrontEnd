@@ -1,11 +1,11 @@
 //Exercicio 1
-let titulos = document.getElementsByTagName("h1");
-let paragrafos = document.getElementsByTagName("p");
-let botoes = document.getElementsByTagName("button");
+let titulo = document.querySelector("h1");
+let paragrafo = document.querySelector("p");
+let botao = document.querySelector("button");
 
-console.log(titulos[0].textContent);
-console.log(paragrafos[0].textContent);
-console.log(botoes[0].textContent);
+console.log(titulo.textContent);
+console.log(paragrafo.textContent);
+console.log(botao.textContent);
 
 //Exercicio 2
 function mudarTexto() {
