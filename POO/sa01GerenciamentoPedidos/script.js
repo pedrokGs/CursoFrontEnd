@@ -110,7 +110,7 @@ class SistemaPedidos{
     this.#produtos.push(produto);
     this.atualizarProdutos();
     document.getElementById("produtoNome").value = "";
-    document.getElementById("produtoPreco").value = ""
+    document.getElementById("produtoPreco").value = "";
   };
 
   adicionarPedido(){
