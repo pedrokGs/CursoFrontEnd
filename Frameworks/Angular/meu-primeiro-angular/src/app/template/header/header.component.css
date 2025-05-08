@@ -1,0 +1,14 @@
+nav{
+  background-color: beige;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a{
+  color: darkslategrey;
+  margin: 0 15px;
+  text-decoration: none;
+  font: 1.5em bold sans-serif;
+}

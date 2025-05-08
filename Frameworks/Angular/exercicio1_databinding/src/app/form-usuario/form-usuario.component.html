@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>Formulário de edição de perfil</h2>
+  <form action="">
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="nome" [(ngModel)]="nome"><br>
+  
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" [(ngModel)]="email"><br>
+
+    <label for="telefone">Telefone:</label>
+    <input type="tel" name="telefone" id="telefone" [(ngModel)]="telefone"><br>
+
+    <label for="genero">Gênero:</label>
+    <select name="genero" id="genero" [(ngModel)]="genero">
+      <option value="">Selecione</option>
+      <option value="masculino">Masculino</option>
+      <option value="feminino">Feminino</option>
+    </select><br>
+
+    <label for="idade">Idade:</label>
+    <input type="number" name="idade" id="idade" [(ngModel)]="idade"><br>
+
+    <label for="profissao">Profissão</label>
+    <input type="text" name="profissao" id="profissao" [(ngModel)]="profissao">
+    <br>
+    <div class="row">
+      <button type="submit" (click)="enviarFormulario()">Enviar</button>
+      <button type="reset" (click)="limparCampos()">Limpar</button>
+    </div>
+    <hr>
+
+    <h3>Visualização em Tempo Real</h3>
+    <div class="preview">
+      <p><strong>Nome:</strong>{{nome}}</p>
+      <p><strong>Email:</strong>{{email}}</p>
+      <p><strong>Telefone:</strong>{{telefone}}</p>
+      <p><strong>Gênero:</strong>{{genero}}</p>
+      <p><strong>Idade:</strong>{{idade}}</p>
+      <p><strong>Profissão:</strong>{{profissao}}</p>
+    </div>
+  </form>
+</div>
