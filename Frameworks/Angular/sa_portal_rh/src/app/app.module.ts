@@ -10,7 +10,7 @@ import { InicioComponent } from './views/inicio/inicio.component';
 import { CurriculosComponent } from './views/curriculos/curriculos.component';
 import { VagasComponent } from './views/vagas/vagas.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PainelVagasComponent } from './view/painel-vagas/painel-vagas.component';
+import { PainelVagasComponent } from './views/painel-vagas/painel-vagas.component';
 
 @NgModule({
   declarations: [

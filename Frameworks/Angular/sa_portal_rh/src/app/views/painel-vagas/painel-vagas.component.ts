@@ -20,9 +20,16 @@ export class PainelVagasComponent implements OnInit{
 
   listarVagas(){
     this._vagaService.getVagas().subscribe(
-      (retornaVaga) => {
-        
-      }
+      (retornaVaga) => this.vagas = retornaVaga.map((item) => {
+        return new Vaga(
+          item.id,
+          item.nome,
+          item.foto,
+          item.descricao,
+          item.salario
+        )
+      })
+      
     )
   }
 }
