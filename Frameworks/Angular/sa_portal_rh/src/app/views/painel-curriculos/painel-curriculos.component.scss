@@ -4,35 +4,42 @@ $sucesso: #28a745;
 $perigo: #dc3545;
 $alerta: #ffff00;
 
-form{
-  max-width: 600px;
+form {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba($color: #000000, $alpha: 0.1);
+  margin-bottom: 30px;
 
-  label{
+  .row {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+  }
+
+  label {
     display: block;
     margin-bottom: 0.5rem;
     color: #333;
   }
 
-  input{
-    width: calc(100% - 20px);
+  input {
+    width: calc(50% - 20px);
     padding: 1rem 10px;
     margin-bottom: 1.5rem;
     border: 1px solid #aaa;
     font-size: 1rem;
     border-radius: 5px;
 
-    &:focus{
+    &:focus {
       outline: none;
       border-color: $primaria;
       box-shadow: 0, 0, 0, rgba(0, 0, 0, 0.25);
     }
   }
 
-  button{
+  button {
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 5px;
@@ -43,31 +50,31 @@ form{
     margin-right: 0.75rem;
   }
 
-  [type="button"]:nth-of-type(1){
+  [type="button"]:nth-of-type(1) {
     background-color: $segundaria;
-    &:hover{
+    &:hover {
       background-color: darken($color: $sucesso, $amount: 10%);
     }
   }
 
-    [type="button"]:nth-of-type(2){
+  [type="button"]:nth-of-type(2) {
     background-color: $segundaria;
-    &:hover{
+    &:hover {
       background-color: darken($color: $alerta, $amount: 10%);
     }
   }
 
-    [type="button"]:nth-of-type(3){
+  [type="button"]:nth-of-type(3) {
     background-color: $segundaria;
-    &:hover{
+    &:hover {
       background-color: darken($color: $perigo, $amount: 10%);
     }
   }
 }
 
-.lista-vagas{
+.lista-vagas {
   margin-top: 35px;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 1rem;
   background-color: #fff;
@@ -75,50 +82,51 @@ form{
   box-shadow: 0 4px 16px rgba($color: #000000, $alpha: 0.5);
   overflow-x: auto;
 
-  .table{
+  .table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1.5rem;
     font-size: 0.8rem;
   }
 
-  td, th {
+  td,
+  th {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #aaa;
     vertical-align: middle;
   }
 
-  thead{
+  thead {
     background-color: #999;
-    
-    th{
+
+    th {
       color: #333;
       font-weight: bold;
     }
   }
 
-  tbody{
-    tr{
-      &:hover{
+  tbody {
+    tr {
+      &:hover {
         background-color: lighten($color: #999, $amount: 5%);
       }
     }
   }
 
-  .btn-listar{
+  .btn-listar {
     border: none;
     background-color: $segundaria;
     padding: 5px 10px;
-    cursor:pointer;
+    cursor: pointer;
     border-radius: 5px;
 
-    &:hover{
+    &:hover {
       background-color: darken($color: $alerta, $amount: 10%);
     }
   }
 }
 
-.rodape{
+.rodape {
   height: 10vh;
 }

@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './views/inicio/inicio.component';
 import { CurriculosComponent } from './views/curriculos/curriculos.component';
 import { VagasComponent } from './views/vagas/vagas.component';
+import { PainelVagasComponent } from './views/painel-vagas/painel-vagas.component';
+import { PainelCurriculosComponent } from './views/painel-curriculos/painel-curriculos.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
   {path: 'curriculos',component:CurriculosComponent},
   {path: 'vagas', component:VagasComponent},
+  {path: 'painel-vagas', component: PainelVagasComponent},
+  {path: 'painel-curriculos', component: PainelCurriculosComponent}
 ];
 
 @NgModule({

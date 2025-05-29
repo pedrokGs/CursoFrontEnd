@@ -1,0 +1,78 @@
+<h2>Cadastrar</h2>
+<form action="">
+  <div class="row">
+    <label for="cpf">CPF</label>
+    <input type="text" name="id" id="id" [(ngModel)]="curriculo.cpf" />
+
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" [(ngModel)]="curriculo.nome" />
+    <br />
+  </div>
+
+  <label for="salario">Email</label>
+  <input
+    type="text"
+    name="salario"
+    id="salario"
+    [(ngModel)]="curriculo.email"
+  /><br />
+
+  <label for="interesses">Interesses</label>
+  <input
+    type="text"
+    name="foto"
+    id="foto"
+    [(ngModel)]="curriculo.interesses"
+  /><br />
+
+  <label for="descricao">Experiência</label>
+  <input
+    type="text"
+    name="descricao"
+    id="descricao"
+    [(ngModel)]="curriculo.experiencia"
+  /><br />
+
+  <button type="button" (click)="cadastrarCurriculo()">Cadastrar</button>
+  <button type="button" (click)="atualizarCurriculo(curriculo.cpf)">
+    Atualizar
+  </button>
+  <button type="button" (click)="deletarCurriculo(curriculo.cpf)">
+    Excluir
+  </button>
+</form>
+
+<section class="lista-vagas">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>CPF</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Interesses</th>
+        <th>Experiencia</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="vaga-row" *ngFor="let curriculo of curriculos">
+        <td>{{ curriculo.cpf }}</td>
+        <td>{{ curriculo.nome }}</td>
+        <td>{{ curriculo.email }}</td>
+        <td>{{ curriculo.interesses }}</td>
+        <td>{{ curriculo.experiencia }}</td>
+        <td>
+          <button
+            class="btn-listar"
+            type="button"
+            (click)="listarCurriculoUnico(curriculo)"
+          >
+            Listar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="rodape"></div>

@@ -11,6 +11,8 @@ import { CurriculosComponent } from './views/curriculos/curriculos.component';
 import { VagasComponent } from './views/vagas/vagas.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PainelVagasComponent } from './views/painel-vagas/painel-vagas.component';
+import { FormsModule } from '@angular/forms';
+import { PainelCurriculosComponent } from './views/painel-curriculos/painel-curriculos.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { PainelVagasComponent } from './views/painel-vagas/painel-vagas.componen
     InicioComponent,
     CurriculosComponent,
     VagasComponent,
-    PainelVagasComponent
+    PainelVagasComponent,
+    PainelCurriculosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
