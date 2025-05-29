@@ -36,8 +36,10 @@
       "salario": "0312312"
     }
   ],
+
   "curriculos": [
     {
+      "id": "1",
       "cpf": "12345678910",
       "nome": "João Silva",
       "idade": 24,
@@ -79,6 +81,37 @@
       "qualificacoes": [],
       "habilidades": [],
       "idiomas": []
+    },
+
+    {
+      "id": "3",
+      "cpf": "12345678910",
+      "nome": "Maria Oliveira",
+      "idade": 30,
+      "email": "mariaoliveira@gmail.com",
+      "contato": "9876543210",
+      "interesses": [
+        "Gestão de Projetos",
+        "Liderança"
+      ],
+      "fotoPerfil": "foto-perfil.jpg",
+      "experiencia": "Mais de 5 anos em gestão de projetos",
+      "formacao": [
+        "MBA em Gestão de Projetos",
+        "Graduação em Administração"
+      ],
+      "qualificacoes": [
+        "Certificação PMP",
+        "Curso de Liderança"
+      ],
+      "habilidades": [
+        "Comunicação",
+        "Resolução de Conflitos"
+      ],
+      "idiomas": [
+        "Português",
+        "Espanhol"
+      ]
     }
   ]
 }
