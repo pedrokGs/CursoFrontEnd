@@ -20,6 +20,7 @@ export class CurriculosComponent {
     this._curriculoService.getCurriculos().subscribe((retornaCurriculo) => {
       this.curriculos = retornaCurriculo.map((item) => {
         return new Curriculo(
+          item.id,
           item.cpf,
           item.nome,
           item.idade,
@@ -31,7 +32,8 @@ export class CurriculosComponent {
           item.formacao,
           item.qualificacoes,
           item.habilidades,
-          item.idiomas
+          item.idiomas,
+          item.sobre
         );
       });
     });

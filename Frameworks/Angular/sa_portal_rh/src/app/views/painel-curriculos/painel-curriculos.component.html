@@ -1,46 +1,343 @@
 <h2>Cadastrar</h2>
-<form action="">
+<form #form="ngForm" (ngSubmit)="cadastrarCurriculo()">
   <div class="row">
-    <label for="cpf">CPF</label>
-    <input type="text" name="cpf" id="cpf" [(ngModel)]="curriculo.cpf" />
-    
-    <label for="nome">Nome</label>
-    <input type="text" name="nome" id="nome" [(ngModel)]="curriculo.nome" />
-    <br/>
+    <div class="col">
+      <div class="row">
+        <!-- CPF -->
+        <div class="col">
+          <label for="cpf">CPF</label>
+          <input
+            type="text"
+            name="cpf"
+            id="cpf"
+            [(ngModel)]="curriculo.cpf"
+            required
+            minlength="11"
+            maxlength="14"
+            #cpfModel="ngModel"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': cpfModel.invalid && cpfModel.touched }"
+          />
+          <div
+            class="invalid-feedback"
+            *ngIf="cpfModel.invalid && cpfModel.touched"
+          >
+            Por favor, informe um CPF válido (mínimo 11 caracteres).
+          </div>
+        </div>
+
+        <!-- ID -->
+        <div class="col">
+          <label for="id">ID</label>
+          <input
+            type="number"
+            name="id"
+            id="id"
+            [(ngModel)]="curriculo.id"
+            required
+            min="1"
+            #idModel="ngModel"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': idModel.invalid && idModel.touched }"
+          />
+          <div
+            class="invalid-feedback"
+            *ngIf="idModel.invalid && idModel.touched"
+          >
+            O ID deve ser um número positivo.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nome -->
+    <div class="col">
+      <label for="nome">Nome</label>
+      <input
+        type="text"
+        name="nome"
+        id="nome"
+        [(ngModel)]="curriculo.nome"
+        required
+        minlength="4"
+        #nomeModel="ngModel"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': nomeModel.invalid && nomeModel.touched }"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="nomeModel.invalid && nomeModel.touched"
+      >
+        Por favor, informe um nome válido com no mínimo 4 caracteres.
+      </div>
+    </div>
   </div>
 
-  <label for="salario">Email</label>
-  <input
-    type="text"
-    name="salario"
-    id="salario"
-    [(ngModel)]="curriculo.email"
-  /><br />
+  <div class="row">
+    <!-- Email -->
+    <div class="col">
+      <label for="email">Email</label>
+      <input
+      type="email"
+      name="email"
+      id="email"
+      [(ngModel)]="curriculo.email"
+      required
+      email
+      #emailModel="ngModel"
+      class="form-control"
+      [ngClass]="{ 'is-invalid': emailModel.invalid && emailModel.touched }"
+      />
+      <div
+      class="invalid-feedback"
+      *ngIf="emailModel.errors?.['required'] && emailModel.touched"
+      >
+      O email é obrigatório.
+      </div>
+      <div
+      class="invalid-feedback"
+      *ngIf="emailModel.errors?.['email'] && emailModel.touched"
+      >
+      Informe um email válido.
+      </div>
+    </div>
 
-  <label for="interesses">Interesses</label>
-  <input
-    type="text"
-    name="foto"
-    id="foto"
-    [(ngModel)]="curriculo.interesses"
-  /><br />
+    <!-- Interesses -->
+    <div class="col">
+      <label for="interesses">Interesses <sub>(Separe por vírgula)</sub></label>
+      <input
+        type="text"
+        name="interesses"
+        id="interesses"
+        [(ngModel)]="curriculo.interesses"
+        required
+        #interessesModel="ngModel"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': interessesModel.invalid && interessesModel.touched
+        }"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="interessesModel.invalid && interessesModel.touched"
+      >
+        Campo obrigatório. Separe os interesses por vírgula.
+      </div>
+    </div>
+  </div>
 
-  <label for="descricao">Experiência</label>
-  <input
-    type="text"
-    name="descricao"
-    id="descricao"
-    [(ngModel)]="curriculo.experiencia"
-  /><br />
+  <div class="row">
+    <!-- Experiência -->
+    <div class="col">
+      <label for="experiencia"
+        >Experiência<sub> (Separe por vírgula)</sub></label
+      >
+      <input
+        type="text"
+        name="experiencia"
+        id="experiencia"
+        [(ngModel)]="curriculo.experiencia"
+        required
+        #experienciaModel="ngModel"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': experienciaModel.invalid && experienciaModel.touched
+        }"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="experienciaModel.invalid && experienciaModel.touched"
+      >
+        Informe pelo menos uma experiência.
+      </div>
+    </div>
 
-  <button type="button" (click)="cadastrarCurriculo()">Cadastrar</button>
-  <button type="button" (click)="atualizarCurriculo(curriculo.cpf)">
+    <!-- Idade -->
+    <div class="col">
+      <label for="idade">Idade</label>
+      <input
+        type="number"
+        name="idade"
+        id="idade"
+        [(ngModel)]="curriculo.idade"
+        required
+        min="18"
+        #idadeModel="ngModel"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': idadeModel.invalid && idadeModel.touched }"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="idadeModel.invalid && idadeModel.touched"
+      >
+        Idade mínima para cadastro é 18 anos.
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Contato -->
+    <div class="col">
+      <label for="contato">Contato</label>
+      <input
+        type="text"
+        name="contato"
+        id="contato"
+        [(ngModel)]="curriculo.contato"
+        required
+        minlength="8"
+        #contatoModel="ngModel"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': contatoModel.invalid && contatoModel.touched
+        }"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="contatoModel.invalid && contatoModel.touched"
+      >
+        Informe um telefone ou meio de contato válido (mínimo 8 caracteres).
+      </div>
+    </div>
+
+    <!-- Formação -->
+    <div class="col">
+      <label for="formacao">Formação <sub>(Separe por vírgula)</sub></label>
+      <input
+        type="text"
+        name="formacao"
+        id="formacao"
+        [(ngModel)]="curriculo.formacao"
+        required
+        #formacaoModel="ngModel"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': formacaoModel.invalid && formacaoModel.touched
+        }"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="formacaoModel.invalid && formacaoModel.touched"
+      >
+        Informe pelo menos uma formação.
+      </div>
+    </div>
+  </div>
+
+  <!-- Qualificações e habilidades -->
+  <div class="row">
+    <div class="col">
+      <label for="qualificacoes"
+        >Qualificações <sub>(Separe por vírgula)</sub></label
+      >
+      <input
+        type="text"
+        name="qualificacoes"
+        id="qualificacoes"
+        [(ngModel)]="curriculo.qualificacoes"
+        required
+        #qualificacaoModel="ngModel"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': qualificacaoModel.invalid && qualificacaoModel.touched
+        }"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="qualificacaoModel.invalid && qualificacaoModel.touched"
+      >
+        Informe pelo menos uma qualificação.
+      </div>
+    </div>
+    <div class="col">
+      <label for="habilidades"
+        >Habilidades <sub>(Separe por vírgula)</sub></label
+      >
+      <input
+        type="text"
+        name="habilidades"
+        id="habilidades"
+        [(ngModel)]="curriculo.habilidades"
+        required
+        #habilidadesModel="ngModel"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': habilidadesModel.invalid && habilidadesModel.touched
+        }"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="habilidadesModel.invalid && habilidadesModel.touched"
+      >
+        Informe pelo menos uma habilidade.
+      </div>
+    </div>
+  </div>
+
+  <!-- Idiomas e Foto -->
+  <div class="row">
+    <div class="col">
+      <label for="idiomas">Idiomas <sub>(Separe por vírgula)</sub></label>
+      <input
+        type="text"
+        name="idiomas"
+        id="idiomas"
+        [(ngModel)]="curriculo.idiomas"
+        required
+        #idiomaModel="ngModel"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': idiomaModel.invalid && idiomaModel.touched
+        }"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="idiomaModel.invalid && idiomaModel.touched"
+      >
+        Informe pelo menos um idioma.
+      </div>
+    </div>
+    <div class="col">
+      <label for="fotoPerfil">Foto de Perfil</label>
+      <input
+      type="text"
+      name="fotoPerfil"
+      id="fotoPerfil"
+      value="foto-perfil"
+      [(ngModel)]="curriculo.fotoPerfil"
+      [attr.placeholder]="'foto-perfil'"
+      disabled
+      class="form-control"
+      />
+    </div>
+  </div>
+
+  <!-- Sobre -->
+  <br />
+  <label for="sobre">Sobre</label>
+  <textarea
+    name="sobre"
+    id="sobre"
+    cols="30"
+    rows="10"
+    [(ngModel)]="curriculo.sobre"
+  >
+  ></textarea
+  >
+
+  <br />
+
+  <button type="submit" [disabled]="form.invalid">Cadastrar</button>
+  <button type="button"
+  (click)="deletarCurriculo(curriculo.id)">Deletar</button>
+</form>
+
+<!-- <button type="button" (click)="atualizarCurriculo(curriculo.cpf)">
     Atualizar
   </button>
   <button type="button" (click)="deletarCurriculo(curriculo.cpf)">
     Excluir
-  </button>
-</form>
+  </button> -->
 
 <section class="lista-vagas">
   <table class="table">
@@ -62,13 +359,17 @@
         <td>{{ curriculo.interesses }}</td>
         <td>{{ curriculo.experiencia }}</td>
         <td>
-          <button
-            class="btn-listar"
-            type="button"
-            (click)="listarCurriculoUnico(curriculo)"
-          >
-            Listar
-          </button>
+          <div class="row">
+            <div class="col">
+              <button
+                class="btn-listar"
+                type="button"
+                (click)="listarCurriculoUnico(curriculo)"
+              >
+                Listar
+              </button>
+            </div>
+          </div>
         </td>
       </tr>
     </tbody>

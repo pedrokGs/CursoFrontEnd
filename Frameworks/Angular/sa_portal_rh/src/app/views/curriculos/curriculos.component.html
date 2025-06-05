@@ -1,15 +1,43 @@
-<section class="lista-curriculos">
-    <div *ngFor="let curriculo of curriculos">
-        <div class="list-tile">
-            <img src="assets/img/{{curriculo.fotoPerfil}}.jpg" alt="">
-        <div class="list-body">
-            <h5 class="list-title">Nome: {{curriculo.nome}}</h5>
-            <h5 class="list-title">Interesse: {{curriculo.interesses}}</h5>
-            <p class="list-text">Email: {{curriculo.email}}</p>
-            <p class="list-text">Contato:{{curriculo.contato}}</p>
-        </div>
-        </div>
-    </div>
-    <div class="rodape"></div>
+<br />
+<section class="cabecalho">
+  <h1>Currículos</h1>
+  <p>Lista de currículos cadastrados no sistema</p>
 </section>
+<section class="lista-curriculos">
+  <div *ngFor="let curriculo of curriculos" class="curriculo-item">
+    <div class="curriculo-summary">
+      <img
+        src="assets/img/{{ curriculo.fotoPerfil }}.jpg"
+        alt=""
+        width="50"
+        height="50"
+        class="list-image"
+      />
+      <span class="curriculo-nome">{{ curriculo.nome }}</span>
+      <span class="curriculo-interesses">{{ curriculo.interesses }}</span>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="curriculo-details">
+          <p><b>Email:</b> {{ curriculo.email }}</p>
+          <p><b>Contato:</b> {{ curriculo.contato }}</p>
+          <p><b>Experiência:</b> {{ curriculo.experiencia }}</p>
+          <p><b>Idade:</b> {{ curriculo.idade }}</p>
+          <p><b>Qualificações:</b> {{ curriculo.qualificacoes }}</p>
+          <p><b>Idiomas:</b> {{ curriculo.idiomas }}</p>
+        </div>
+      </div>
+      <div class="col">
+                <div class="curriculo-details">
+          <p><b>Idade:</b> {{ curriculo.idade }}</p>
+          <p><b>Interesses:</b> {{ curriculo.interesses }}</p>
+          <p><b>Experiência:</b> {{ curriculo.experiencia }}</p>
+          <p><b>Formação:</b> {{ curriculo.formacao }}</p>
+          <p><b>Habilidades:</b> {{ curriculo.habilidades }}</p>
 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rodape"></div>
+</section>

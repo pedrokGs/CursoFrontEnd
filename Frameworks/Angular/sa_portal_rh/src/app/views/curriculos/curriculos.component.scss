@@ -1,0 +1,45 @@
+
+.cabecalho{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.curriculo-item {
+    position: relative;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+    overflow: hidden;
+}
+.curriculo-summary {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.curriculo-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    padding-left: 66px;
+}
+.curriculo-item:hover {
+    background: #f9f9f9;
+}
+.curriculo-item:hover .curriculo-details {
+    max-height: 300px;
+}
+.list-image {
+    border-radius: 50%;
+    object-fit: cover;
+}
+.curriculo-nome {
+    font-weight: bold;
+}
+.curriculo-interesses {
+    color: #666;
+}
