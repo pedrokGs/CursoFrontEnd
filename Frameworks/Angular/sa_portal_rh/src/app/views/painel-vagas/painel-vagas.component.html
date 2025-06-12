@@ -1,4 +1,8 @@
-<h2>Cadastrar</h2>
+<section class="cabecalho">
+  <h1>Cadastrar vagas</h1>
+  <p>Painel de administrador de vagas</p>
+</section>
+<br>
 <form action="">
   <label for="id">Id</label>
   <input type="text" name="id" id="id" [(ngModel)] = 'vaga.id'><br>
@@ -19,6 +23,8 @@
   <button type="button" (click)="atualizarVaga(vaga.id)">Atualizar</button>
   <button type="button" (click)="deletarVaga(vaga.id)">Excluir</button>
 </form>
+
+<br><br>
 
 <section class="lista-vagas">
   <table class="table">

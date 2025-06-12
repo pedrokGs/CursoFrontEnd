@@ -122,3 +122,12 @@ form{
 .rodape{
   height: 10vh;
 }
+
+.cabecalho{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}

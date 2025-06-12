@@ -1,9 +1,13 @@
-<h2>Cadastrar</h2>
+<section class="cabecalho">
+  <h1>Cadastrar Currículos</h1>
+  <p>Painel de administrador de currículos</p>
+</section>
+<br>
 <form #form="ngForm" (ngSubmit)="cadastrarCurriculo()">
   <div class="row">
     <div class="col">
       <div class="row">
-        <!-- CPF -->
+
         <div class="col">
           <label for="cpf">CPF</label>
           <input
@@ -26,7 +30,6 @@
           </div>
         </div>
 
-        <!-- ID -->
         <div class="col">
           <label for="id">ID</label>
           <input
@@ -50,7 +53,6 @@
       </div>
     </div>
 
-    <!-- Nome -->
     <div class="col">
       <label for="nome">Nome</label>
       <input
@@ -74,7 +76,6 @@
   </div>
 
   <div class="row">
-    <!-- Email -->
     <div class="col">
       <label for="email">Email</label>
       <input
@@ -102,7 +103,6 @@
       </div>
     </div>
 
-    <!-- Interesses -->
     <div class="col">
       <label for="interesses">Interesses <sub>(Separe por vírgula)</sub></label>
       <input
@@ -127,7 +127,6 @@
   </div>
 
   <div class="row">
-    <!-- Experiência -->
     <div class="col">
       <label for="experiencia"
         >Experiência<sub> (Separe por vírgula)</sub></label
@@ -152,7 +151,6 @@
       </div>
     </div>
 
-    <!-- Idade -->
     <div class="col">
       <label for="idade">Idade</label>
       <input
@@ -176,7 +174,6 @@
   </div>
 
   <div class="row">
-    <!-- Contato -->
     <div class="col">
       <label for="contato">Contato</label>
       <input
@@ -200,7 +197,6 @@
       </div>
     </div>
 
-    <!-- Formação -->
     <div class="col">
       <label for="formacao">Formação <sub>(Separe por vírgula)</sub></label>
       <input
@@ -224,7 +220,6 @@
     </div>
   </div>
 
-  <!-- Qualificações e habilidades -->
   <div class="row">
     <div class="col">
       <label for="qualificacoes"
@@ -274,7 +269,6 @@
     </div>
   </div>
 
-  <!-- Idiomas e Foto -->
   <div class="row">
     <div class="col">
       <label for="idiomas">Idiomas <sub>(Separe por vírgula)</sub></label>
@@ -312,7 +306,6 @@
     </div>
   </div>
 
-  <!-- Sobre -->
   <br />
   <label for="sobre">Sobre</label>
   <textarea
@@ -328,6 +321,7 @@
   <br />
 
   <button type="submit" [disabled]="form.invalid">Cadastrar</button>
+  <button type="button" (click)="atualizarCurriculo(curriculo.id)">Atualizar</button>
   <button type="button"
   (click)="deletarCurriculo(curriculo.id)">Deletar</button>
 </form>

@@ -5,7 +5,7 @@
       "nome": "Desenvolvedor frontend Jr",
       "foto": "foto1.jpg",
       "descricao": "Trabalhar com HTML, CSS e JS",
-      "salario": 4000
+      "salario": "4001"
     },
     {
       "id": "2",
@@ -27,24 +27,16 @@
       "foto": "foto4.jpg",
       "descricao": "Trabalhar com Nuvem AWS",
       "salario": 8000
-    },
-    {
-      "id": "5",
-      "nome": "3213",
-      "foto": "213123",
-      "descricao": "213123",
-      "salario": "0312312"
     }
   ],
   "curriculos": [
     {
-      "id": 1,
+      "id": "1",
       "cpf": "12345678910",
       "nome": "João Silva",
       "idade": 24,
       "email": "joaosilva@gmail.com",
       "contato": "19123125423",
-      "foto": "foto-perfil.jpg",
       "interesses": [
         "Programação",
         "Desenvolvimento"
@@ -67,7 +59,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "cpf": "12345678910",
       "nome": "Maria Oliveira",
       "idade": 30,
@@ -97,37 +89,7 @@
       ]
     },
     {
-      "id": 3,
-      "cpf": "12345678910",
-      "nome": "Carlos Pereira",
-      "idade": 28,
-      "email": "carlospereira@gmail.com",
-      "contato": "1122334455",
-      "interesses": [
-        "Desenvolvimento de Software",
-        "Inteligência Artificial"
-      ],
-      "fotoPerfil": "foto-perfil",
-      "experiencia": "3 anos em desenvolvimento de software",
-      "formacao": [
-        "Bacharel em Ciência da Computação"
-      ],
-      "qualificacoes": [
-        "Curso de Inteligência Artificial",
-        "Especialização em Machine Learning"
-      ],
-      "habilidades": [
-        "Python",
-        "JavaScript",
-        "SQL"
-      ],
-      "idiomas": [
-        "Português",
-        "Inglês"
-      ]
-    },
-    {
-      "id": 4,
+      "id": "4",
       "cpf": "12345678910",
       "nome": "Ana Souza",
       "idade": 26,
@@ -158,7 +120,7 @@
       "sobre": "Ana é uma designer apaixonada por criar experiências visuais impactantes. Com um olhar atento aos detalhes, ela transforma ideias em designs inovadores e funcionais."
     },
     {
-      "id": 5,
+      "id": "5",
       "cpf": "12345678910",
       "nome": "Lucas Martins",
       "idade": 29,
@@ -188,6 +150,38 @@
         "Inglês"
       ],
       "sobre": "Lucas é um desenvolvedor web experiente, especializado em criar aplicações robustas e escaláveis. Ele tem um forte conhecimento em bancos de dados e é apaixonado por otimizar o desempenho das aplicações."
+    },
+    {
+      "id": 2313,
+      "cpf": "12345678910",
+      "nome": "Carlos  Henrique",
+      "idade": 21,
+      "email": "carloshenrique@gmail.com",
+      "contato": "1999234231232",
+      "interesses": [
+        "Fotografia",
+        "Música"
+      ],
+      "fotoPerfil": "foto-perfil",
+      "experiencia": "Atuação como fotógrafo",
+      "formacao": [
+        "Fotografia",
+        "Música"
+      ],
+      "qualificacoes": [
+        "Fotografia",
+        "Música"
+      ],
+      "habilidades": [
+        "Fotografia",
+        "Música"
+      ],
+      "idiomas": [
+        "Português",
+        "Inglês",
+        "Espanhol"
+      ],
+      "sobre": "Gosto de tirar fotos e tocar música"
     }
   ]
 }
