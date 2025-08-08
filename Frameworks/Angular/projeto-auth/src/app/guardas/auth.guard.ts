@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
+// Middleware 
+// implements -> contrato que obriga a implementar o método canActivate
 export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
   

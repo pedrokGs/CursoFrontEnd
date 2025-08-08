@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'home',component: HomeComponent},
   {path: 'login', component:LoginComponent},
   {path: 'registro', component: RegistroComponent},
-  {path: 'interno', component: InternaComponent, canActivate: [AuthGuard]},
+  {path: 'interna', component: InternaComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', redirectTo: 'home'}
 ]
